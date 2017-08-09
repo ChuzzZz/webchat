@@ -43,7 +43,6 @@ public class CountUser implements HttpSessionListener,HttpSessionAttributeListen
     	ServletContext application = session.getServletContext();
     	
     	if(application.getAttribute("OnlineCount") == null) {
-    		System.out.println("???");
 			int count = 0;
 			application.setAttribute("OnlineCount",count);
 		} else {

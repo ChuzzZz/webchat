@@ -18,6 +18,7 @@ if (confirm("你确定要离开聊天室吗？")){
 </head>
 <body>
 	<h3>欢迎来到泰达首家线上聊天室</h3>
+	<hr>
 	<%
 		/* Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
@@ -30,8 +31,9 @@ if (confirm("你确定要离开聊天室吗？")){
 		} */
 		User user = (User)session.getAttribute("User");
 		String nickname = user.getNickname();
-		out.print("<h3>" + nickname + "</h3>");
+		out.print(nickname);
 	%>
+	<img src='<jsp:attribute name=""></jsp:attribute>'>
 	<input type="button" value="注销" onclick="logout()">
 	<h4 style="color:blue">正在学习的人数：<span>
 	<%
@@ -42,14 +44,6 @@ if (confirm("你确定要离开聊天室吗？")){
 	
 	<h4 style="color:red">聊天室在线用户：</h4>
 	<%
-		/* HashSet<String> users = (HashSet<String>)application.getAttribute("OnlineUsers");
-		if(users == null)out.print("心态崩了");
-		else{
-			for(String s : users){
-				out.print(s);
-			}
-		} */
-		
 		HashSet<User> OnlineUser = (HashSet<User>)application.getAttribute("OnlineUser");
 		if(OnlineUser != null){
 			for(User u: OnlineUser){

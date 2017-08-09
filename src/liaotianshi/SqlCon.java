@@ -79,11 +79,6 @@ public class SqlCon {
 	}
 
 	public static void main(String[] args) {
-//		SqlCon sql = new SqlCon();
-//		if(sql.checkNickname("123")){
-//			System.out.print("该昵称可用");
-//		}else{
-//			System.out.print("该昵称已被注册");
-//		}
+		
 	}
 }

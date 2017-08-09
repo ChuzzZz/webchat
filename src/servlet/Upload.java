@@ -1,4 +1,4 @@
-package liaotianshi;
+package servlet;
 
 import java.io.*;
 import java.util.List;

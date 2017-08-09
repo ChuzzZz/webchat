@@ -29,7 +29,7 @@
 		action="send.jsp">
 		<textarea maxlength="32" rows="7" cols="100" name="content"
 			placeholder="请输入聊天内容"></textarea>
-		<div id="d1" style="color: #FF0000"></div>
+		<div id="d1" style="color: red"></div>
 		<input type="submit" name="send" value="发送">
 	</form>
 
@@ -44,22 +44,21 @@
 			content = new String(content.getBytes("ISO-8859-1"), "UTF-8");
 			//时间
 			Date date = new Date();
-			//long times = date.getTime();
-			SimpleDateFormat formatter = new SimpleDateFormat(
-					"yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String time = formatter.format(date);
 			//用户昵称
 			String nickname = null;
-			/* 	Cookie[] cookies = request.getCookies();
-			 if (cookies != null) {
-			 for (Cookie c : cookies) {
-			 if (c.getName().equals("nickname")) {
-			 nickname = URLDecoder.decode(c.getValue(),"UTF-8");
-			 break;
-			 }
-			 }
-			 } */
-			nickname = ((User)session.getAttribute("User")).getNickname();
+			nickname = ((User) session.getAttribute("User")).getNickname();
+			
+			/*Cookie[] cookies = request.getCookies();
+			if (cookies != null) {
+				for (Cookie c : cookies) {
+					if (c.getName().equals("nickname")) {
+						nickname = URLDecoder.decode(c.getValue(), "UTF-8");
+						break;
+					}
+				}
+			}*/
 
 			Chatlog cl = new Chatlog();
 			cl.setNickname(nickname);
